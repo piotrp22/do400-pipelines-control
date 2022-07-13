@@ -1,5 +1,5 @@
 pipeline {
-    gent {
+    agent {
         node {
             label 'nodejs'
         }
