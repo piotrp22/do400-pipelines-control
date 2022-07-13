@@ -1,11 +1,19 @@
-node('nodejs') {
-    stage('Checkout') {
-        git branch: 'main',url: 'https://github.com/piotrp22/do400-pipelines-control'
+pipeline {
+    gent {
+        node {
+            label 'nodejs'
+        }
  }
+ stages {
     stage('Backend Tests') {
-        sh 'node ./backend/test.js'
- }
+        steps {
+            sh 'node ./backend/test.js'
+        }
+    }
     stage('Frontend Tests') {
+        steps {
         sh 'node ./frontend/test.js'
+        }
+    }
  }
 }
